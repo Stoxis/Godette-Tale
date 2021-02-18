@@ -1,7 +1,7 @@
 # Godette-Tale
 This is an Undertale game template for Godot, it tries to stay as true to the original IP while also being as plug and play as possible.
 
-This project currently does not contain a FIGHT system, help implementing one would be much obliged.
+This project currently does not contain a FIGHT system, any help implementing one would be much obliged.
 
 Any other help, bug fixes, etc, would also be much appreciated.
 
@@ -34,3 +34,5 @@ Any other help, bug fixes, etc, would also be much appreciated.
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
 
 This project is not meant to be a recreation of Undertale the game, it's meant to be used as a platform for fangames, if you want to play Undertale, buy Undertale.
+
+All the work not owned by Toby Fox is licensed under the MIT License.
