@@ -19,7 +19,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 ### Dialogue
 * NPCs can speak dialogue
 * NPCs can have custom portraits, fonts, and typing sounds
-* NPCs can change their portraits on the fly, this allows for different emotions and for an animated talking portrait (examples *are* provided in the project)
+* NPCs can change their portraits on the fly, this allows for different emotions and for an animated talking portrait (examples **are provided** in the project)
 ### Saving
 * Undertale is a modern game! You do not need to play the entire thing in one setting, and the same goes for games created with the Godette-Tale project template
 * Save stars can be placed and given unique dialogue
