@@ -18,7 +18,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		tie.set_font_bypath("res://addons/GodotTIE/Fonts/Comic-Sans-UT.tres")
 		tie.buff_typesound("res://addons/GodotTIE/Sans.wav")
 		tie.buff_face("res://Assets/Expressions/Sans/Sans.png")
-		#tie.buff_asterisk("show")
 		tie.buff_panel("show")
 		# Buff text: "Text", duration (in seconds) of each letter
 		tie.buff_text("* I'm real, right?", 0.09)
