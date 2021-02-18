@@ -73,5 +73,3 @@ func _on_Typesound(s):
 			#print("0")
 		pass
 
-#branching dialogue could go down here?????
-#just need to figure out options, then use a signal with a custom string, the answer, to use an if statement on.
