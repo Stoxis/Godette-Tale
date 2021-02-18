@@ -105,44 +105,44 @@ collision_layer = 8
 [node name="Button" parent="Interactive" instance=ExtResource( 15 )]
 position = Vector2( 0, 168 )
 scale = Vector2( 2, 2 )
-strSignal = "Your"
+strSignal = "Signal1"
 
 [node name="Button2" parent="Interactive" instance=ExtResource( 15 )]
 position = Vector2( -56, 168 )
 scale = Vector2( 2, 2 )
-strSignal = "Mom"
+strSignal = "Signal2"
 
 [node name="Button3" parent="Interactive" instance=ExtResource( 15 )]
-position = Vector2( -136, 168 )
+position = Vector2( -136, 166.811 )
 scale = Vector2( 2, 2 )
-strSignal = "Gay"
+strSignal = "Signal3"
 
 [node name="Button4" parent="Interactive" instance=ExtResource( 15 )]
 position = Vector2( -216, 168 )
 scale = Vector2( 2, 2 )
-strSignal = "Noob"
+strSignal = "Signal4"
 
 [node name="Door" parent="Interactive" instance=ExtResource( 14 )]
 position = Vector2( -120, -40 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "Your", "Mom", "Gay", "Noob", "Lol" ]
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 5
 
 [node name="Door2" parent="Interactive" instance=ExtResource( 14 )]
-position = Vector2( 520, -32 )
+position = Vector2( 518.811, -32 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "otherScene", "Yolooo" ]
 intMaxActivationCount = 3
 
 [node name="Lever" parent="Interactive" instance=ExtResource( 13 )]
-position = Vector2( -184, -16 )
+position = Vector2( -184, -17.1892 )
 scale = Vector2( 2, 2 )
-strSignal = "Lol"
+strSignal = "Signal5"
 
 [node name="Lever2" parent="Interactive" instance=ExtResource( 13 )]
 position = Vector2( -224, -16 )
 scale = Vector2( 2, 2 )
-strSignal = "Lol"
+strSignal = "Signal5"
 
 [node name="Spikes" parent="Interactive" instance=ExtResource( 16 )]
 position = Vector2( -264, 0 )
