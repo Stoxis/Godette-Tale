@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Player/Camera2D.gd" type="Script" id=1]
+
+
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2( 320, 240 )
+current = true
+script = ExtResource( 1 )
+
+[node name="Limits" type="Node" parent="."]
+
+[node name="TopLeft" type="Position2D" parent="Limits"]
+__meta__ = {
+"_gizmo_extents_": 116.8
+}
+
+[node name="BottomRight" type="Position2D" parent="Limits"]
+position = Vector2( 640, 480 )
+__meta__ = {
+"_gizmo_extents_": 116.8
+}

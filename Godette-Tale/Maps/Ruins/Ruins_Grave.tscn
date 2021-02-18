@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Maps/Ruins/Ruins_Grave.tmx" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Player/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Dialogue/DialogueInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Transition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Music/Ruins_Grave.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/Puzzles/Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Puzzles/Lever.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/SaveStar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Dialogue/SavePoints/SaveGrave.gd" type="Script" id=10]
+
+[node name="Root_Node" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+script = ExtResource( 6 )
+
+[node name="Collisions" parent="." index="1"]
+position = Vector2( 0, -20 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 151.251, 49.927 )
+scale = Vector2( 1, 1 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" index="4"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 151.251, 49.927 )
+
+[node name="TopLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( 0, -40 )
+
+[node name="BottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 1360, 480 )
+
+[node name="CanvasLayer" parent="." index="4" instance=ExtResource( 4 )]
+
+[node name="Transition" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 148, 40 )
+scale = Vector2( 11.471, 0.158897 )
+new_scene = "res://Example.tscn"
+playerPosition = Vector2( -121.6, -4.522 )
+
+[node name="Button" parent="." index="6" instance=ExtResource( 7 )]
+position = Vector2( 92, 68 )
+strSignal = "otherScene"
+activationLocation = "res://Example.tscn"
+
+[node name="Button2" parent="." index="7" instance=ExtResource( 7 )]
+position = Vector2( 212, 68 )
+strSignal = "otherScene"
+activationLocation = "res://Example.tscn"
+
+[node name="Lever" parent="." index="8" instance=ExtResource( 8 )]
+position = Vector2( 60, 92 )
+strSignal = "Yolooo"
+activationLocation = "res://Example.tscn"
+
+[node name="savePoint" parent="." index="9" instance=ExtResource( 9 )]
+position = Vector2( 150.539, 119.742 )
+script = ExtResource( 10 )
+
+[editable path="Camera2D"]
+
+[editable path="CanvasLayer"]
