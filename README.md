@@ -38,6 +38,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Menu
 * Shops
 * Inventory
+* Storage Boxes
 * Cellphone conversations (most likely going to be stored in Root_Node)
 
 # Notice of Non-Affiliation and Disclaimers
