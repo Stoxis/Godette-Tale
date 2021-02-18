@@ -33,6 +33,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 # To do
 * Intro Sequence
 * Name the fallen human screen
+* Load/Reset Main Menu screen
 * Fight System
 * Menu
 * Cellphone conversations (most likely going to be stored in Root_Node)
