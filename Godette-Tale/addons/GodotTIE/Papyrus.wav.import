@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Papyrus.wav-b1a8ff7b743a64c6da4e56ebece7c3a6.sample"
+
+[deps]
+
+source_file="res://addons/GodotTIE/Papyrus.wav"
+dest_files=[ "res://.import/Papyrus.wav-b1a8ff7b743a64c6da4e56ebece7c3a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
