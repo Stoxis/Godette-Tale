@@ -36,6 +36,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Load/Reset screen
 * Fight System
 * Menu
+* Shops
 * Inventory
 * Cellphone conversations (most likely going to be stored in Root_Node)
 
