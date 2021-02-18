@@ -37,4 +37,4 @@ This project is not meant to be a recreation of Undertale the game, it's meant t
 
 Anything not owned by Toby Fox is licensed under the MIT License.
 
-This template uses a modified version of [GodotTIE] (https://github.com/henriquelalves/GodotTIE) (MIT).
+This template uses a modified version of [GodotTIE](https://github.com/henriquelalves/GodotTIE) (MIT).
