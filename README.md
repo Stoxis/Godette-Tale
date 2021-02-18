@@ -30,11 +30,11 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Music can be stopped, changed, or paused on the fly 
 * Music is generally set in the Root_Node of the scene
 
-# Notice of Non-Affiliation and Disclaimer
+# Notice of Non-Affiliation and Disclaimers
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
 
 This project is not meant to be a recreation of Undertale the game, it's meant to be used as a platform for fangames, if you want to play Undertale, buy Undertale.
 
 Anything not owned by Toby Fox is licensed under the MIT License.
 
-This template uses a modified version of [GodotTIE](https://github.com/henriquelalves/GodotTIE)(MIT).
+This template uses a modified version of [GodotTIE] (https://github.com/henriquelalves/GodotTIE)(MIT).
