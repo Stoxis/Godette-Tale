@@ -18,7 +18,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		tie.set_font_bypath("res://addons/GodotTIE/Fonts/Papyrus-UT.tres")
 		tie.buff_typesound("res://addons/GodotTIE/Papyrus.wav")
 		tie.buff_face("res://Assets/Expressions/Papyrus/PapNormal.png")
-		#tie.buff_asterisk("show")
 		tie.buff_panel("show")
 		# Buff text: "Text", duration (in seconds) of each letter
 		tie.buff_text("NYEH", 0.065)
@@ -29,8 +28,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		tie.buff_break()
 		tie.buff_clear()
 		tie.buff_panel("hide")
-		#tie.buff_asterisk("hide")
-		#tie.buff_asterisk2("hide")
 		tie.buff_face("res://Assets/Expressions/None.png")
 		tie.set_state(tie.STATE_OUTPUT)
 
