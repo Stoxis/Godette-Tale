@@ -1,5 +1,5 @@
 # Godette-Tale
-Undertale template for Godot
+This is an Undertale game template for Godot, it tries to stay as true to the original IP 
 
 ## Features:
 ### Player Controller
@@ -25,3 +25,8 @@ Undertale template for Godot
 * Music does not restart upon entering a different scene and instead contintues playing
 * Music can be stopped, changed, or paused on the fly 
 * Music is generally set in the Root_Node of the scene
+
+# Notice of Non-Affiliation and Disclaimer
+We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
+
+This project is not meant to be a recreation of Undertale the game, it's meant to be used as a platform for fangames, if you want to play Undertale, buy Undertale.
