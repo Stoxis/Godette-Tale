@@ -35,4 +35,4 @@ We are not affiliated, associated, authorized, endorsed by, or in any way offici
 
 This project is not meant to be a recreation of Undertale the game, it's meant to be used as a platform for fangames, if you want to play Undertale, buy Undertale.
 
-All the work not owned by Toby Fox is licensed under the MIT License.
+Anything not owned by Toby Fox is licensed under the MIT License.
