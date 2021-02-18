@@ -21,7 +21,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * NPCs can have custom portraits, fonts, and typing sounds
 * NPCs can change their portraits on the fly, this allows for different emotions and for an animated talking portrait (examples **are provided** in the project)
 ### Saving
-* Undertale is a modern game! You do not need to play the entire thing in one setting, and the same goes for games created with the Godette-Tale project template
+* Undertale is a modern game! You do not need to play the entire thing in one sitting, and the same goes for games created with the Godette-Tale project template
 * Save stars can be placed and given unique dialogue
 * Save stars save the Player's location, LOVE, NAME, Playtime, the current location's room description, and all puzzle object states  
 * Room descriptions are set in the Root_Node of the current scene the player is in
