@@ -1,5 +1,9 @@
 # Godette-Tale
-This is an Undertale game template for Godot, it tries to stay as true to the original IP 
+This is an Undertale game template for Godot, it tries to stay as true to the original IP while also being as plug and play as possible.
+
+This project currently does not contain a FIGHT system, help implementing one would be much obliged.
+
+Any other help, bug fixes, etc, would also be much appreciated.
 
 ## Features:
 ### Player Controller
