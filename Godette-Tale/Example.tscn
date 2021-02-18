@@ -131,7 +131,7 @@ intMaxActivationCount = 5
 [node name="Door2" parent="Interactive" instance=ExtResource( 14 )]
 position = Vector2( 518.811, -32 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "otherScene", "Yolooo" ]
+aryActivationPhrases = [ "otherScene", "otherScene1" ]
 intMaxActivationCount = 3
 
 [node name="Lever" parent="Interactive" instance=ExtResource( 13 )]
@@ -147,25 +147,25 @@ strSignal = "Signal5"
 [node name="Spikes" parent="Interactive" instance=ExtResource( 16 )]
 position = Vector2( -264, 0 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "Your", "Mom", "Gay", "Noob", "Lol", "" ]
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes2" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -304, 0 )
+position = Vector2( -305, 0 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "Your", "Mom", "Gay", "Noob", "Lol" ]
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes3" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -344, 0 )
+position = Vector2( -345, 0 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "Your", "Mom", "Gay", "Noob", "Lol" ]
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes4" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -384, 0 )
+position = Vector2( -385, 0 )
 scale = Vector2( 2, 2 )
-aryActivationPhrases = [ "Your", "Mom", "Gay", "Noob", "Lol" ]
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Node2" type="Node" parent="."]

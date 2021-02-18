@@ -48,13 +48,13 @@ strSignal = "otherScene"
 activationLocation = "res://Example.tscn"
 
 [node name="Button2" parent="." index="7" instance=ExtResource( 7 )]
-position = Vector2( 212, 68 )
+position = Vector2( 211.625, 68 )
 strSignal = "otherScene"
 activationLocation = "res://Example.tscn"
 
 [node name="Lever" parent="." index="8" instance=ExtResource( 8 )]
 position = Vector2( 60, 92 )
-strSignal = "Yolooo"
+strSignal = "otherScene1"
 activationLocation = "res://Example.tscn"
 
 [node name="savePoint" parent="." index="9" instance=ExtResource( 9 )]
