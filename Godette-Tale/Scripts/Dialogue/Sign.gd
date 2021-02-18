@@ -17,7 +17,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		tie.set_font_bypath("res://addons/GodotTIE/Fonts/Comic-Sans-UT.tres")
 		tie.buff_typesound("res://addons/GodotTIE/Sans.wav")
 		tie.buff_face("res://Assets/Expressions/Sans/Sans.png")
-		#tie.buff_asterisk("show")
 		tie.buff_panel("show")
 		# Buff text: "Text", duration (in seconds) of each letter
 		tie.buff_text("* This is a song, ", 0.1)
@@ -25,7 +24,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		# Buff silence: Duration of the silence (in seconds)
 		tie.buff_silence(1)
 		tie.buff_face("res://Assets/Expressions/Sans/Sans1.png")
-		#tie.buff_asterisk2("show")
 		tie.buff_text("* It is so beautiful,\n", 0.1)
 		tie.buff_text("  lalala", 0.2)
 		tie.buff_break()
@@ -35,8 +33,6 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 		tie.buff_break()
 		tie.buff_clear()
 		tie.buff_panel("hide")
-		#tie.buff_asterisk("hide")
-		#tie.buff_asterisk2("hide")
 		tie.buff_face("res://Assets/Expressions/None.png")
 		tie.set_state(tie.STATE_OUTPUT)
 
