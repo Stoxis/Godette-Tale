@@ -1,19 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
-var curHp : int = 10
-var maxHp : int = 10
 var moveSpeed : int = 192
-var damage : int = 1
-
-var gold : int = 0
-
-var curLevel : int = 0
-var curXp : int = 0
-var xpToNextLevel : int = 50
-var xpToLevelIncreaseRate : float = 1.2
-
-var interactDist : int = 70
 
 var vel : Vector2 = Vector2()
 var facingDir : Vector2 = Vector2()
@@ -50,11 +38,28 @@ func _physics_process (delta):
 			isMoving = true
 		
 		# Direction Conflict Handling
-		if Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down"):
+		if Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down") && vel.x == 1: #player velocity is right
+			vel.y -= 1
+			facingDir = Vector2(1, 0)
+			isMoving = true
+		elif Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down") && vel.x == -1: #player velocity is left
+			vel.y -= 1
+			facingDir = Vector2(-1, 0)
+			isMoving = true
+		elif Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down"):
 			vel.y -= 1
 			facingDir = Vector2(0, -1)
 			isMoving = true
-		if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
+
+		if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == 1: #player velocity is down
+			vel.x -= 1
+			facingDir = Vector2(0, 1) #face up
+			isMoving = true
+		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == -1: #player velocity is up
+			vel.x -= 1
+			facingDir = Vector2(0, -1) #face down
+			isMoving = true
+		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
 			vel.x -= 1
 			facingDir = Vector2(-1, 0)
 			isMoving = true
