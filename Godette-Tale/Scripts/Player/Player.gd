@@ -40,11 +40,11 @@ func _physics_process (delta):
 		# Direction Conflict Handling
 		if Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down") && vel.x == 1: #player velocity is right
 			vel.y -= 1
-			facingDir = Vector2(1, 0)
+			facingDir = Vector2(1, 0) #face right
 			isMoving = true
 		elif Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down") && vel.x == -1: #player velocity is left
 			vel.y -= 1
-			facingDir = Vector2(-1, 0)
+			facingDir = Vector2(-1, 0) #face left
 			isMoving = true
 		elif Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down"):
 			vel.y -= 1
@@ -53,11 +53,11 @@ func _physics_process (delta):
 
 		if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == 1: #player velocity is down
 			vel.x -= 1
-			facingDir = Vector2(0, 1) #face up
+			facingDir = Vector2(0, 1) #face down
 			isMoving = true
 		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == -1: #player velocity is up
 			vel.x -= 1
-			facingDir = Vector2(0, -1) #face down
+			facingDir = Vector2(0, -1) #face up
 			isMoving = true
 		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
 			vel.x -= 1
