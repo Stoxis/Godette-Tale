@@ -68,12 +68,6 @@ texture = ExtResource( 2 )
 [node name="TypeSound" parent="CanvasLayer/panel/text_interface_engine" index="0"]
 stream = null
 
-[node name="FFKNLoop" type="Node" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FFKNLoop"]
-autoplay = "Loop"
-anims/Loop = SubResource( 1 )
-
 [node name="Interactive" type="Node" parent="."]
 
 [node name="Sign" parent="Interactive" instance=ExtResource( 5 )]
