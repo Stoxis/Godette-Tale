@@ -20,6 +20,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * NPCs can speak dialogue
 * NPCs can have custom portraits, fonts, and typing sounds
 * NPCs can change their portraits on the fly, this allows for different emotions and for an animated talking portrait (examples **are provided** in the project)
+* A fully functional Cell menu with dialogue system integration
 ### Saving
 * Undertale is a modern game! You do not need to play the entire thing in one sitting, and the same goes for games created with the Godette-Tale project template
 * Save stars can be placed and given unique dialogue
@@ -35,11 +36,11 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Name the fallen human screen
 * Load/Reset screen
 * Fight System
-* Menu
+* ~~Menu~~
 * Shops
 * Inventory
 * Storage Boxes
-* Cellphone conversations (most likely going to be stored in Root_Node)
+* ~~Cellphone conversations (most likely going to be stored in Root_Node)~~
 
 # Notice of Non-Affiliation and Disclaimers
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
