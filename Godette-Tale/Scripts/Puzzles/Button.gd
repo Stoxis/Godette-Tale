@@ -2,14 +2,14 @@ extends Area2D
 export var strSignal : String #String ID and activationLocation can be set in the inspector
 export(String, FILE, "*.tscn") var activationLocation #Default_Value: "Current Scene" #A button can trigger something in a different scene with this setting
 var is_pressed := false
-var aryDump : Array
+var aryDump : Array 
 
 func _ready():
-	if !activationLocation:
-		activationLocation = get_tree().current_scene.filename
+	if !activationLocation: #if there's no alternate location set
+		activationLocation = get_tree().current_scene.filename #set it to the current scene
 	if globalVariables.objectList.has(str(get_tree().current_scene.filename)): #continue if there are pressed buttons found in this scene
-		aryDump = globalVariables.objectList[str(get_tree().current_scene.filename)].split(", ")
-		if aryDump.find(self.name) != -1: #check if self is one of the pressed buttons
+		aryDump = globalVariables.objectList[str(get_tree().current_scene.filename)].split(", ") #turn the array into a string
+		if aryDump.find(self.name) != -1: #check if the array contains the current node's name
 			$Sprite.set_frame(1) #button is visibly pressed
 			is_pressed = !is_pressed #is_pressed = true
 

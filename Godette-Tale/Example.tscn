@@ -16,13 +16,9 @@
 [ext_resource path="res://Prefabs/Puzzles/Spikes.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scripts/Music/Amalgam.gd" type="Script" id=17]
 [ext_resource path="res://Prefabs/SaveStar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/MenuPanel.tscn" type="PackedScene" id=19]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Loop"
-length = 0.5
-loop = true
-
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
 var aryTest : Array = [\"String1\", \"String2\", \"String3\", \"String4\"]
@@ -68,6 +64,8 @@ texture = ExtResource( 2 )
 [node name="TypeSound" parent="CanvasLayer/panel/text_interface_engine" index="0"]
 stream = null
 
+[node name="infoPanel" parent="CanvasLayer" instance=ExtResource( 19 )]
+
 [node name="Interactive" type="Node" parent="."]
 
 [node name="Sign" parent="Interactive" instance=ExtResource( 5 )]
@@ -107,7 +105,7 @@ scale = Vector2( 2, 2 )
 strSignal = "Signal2"
 
 [node name="Button3" parent="Interactive" instance=ExtResource( 15 )]
-position = Vector2( -136, 166.811 )
+position = Vector2( -136, 168 )
 scale = Vector2( 2, 2 )
 strSignal = "Signal3"
 
@@ -116,20 +114,25 @@ position = Vector2( -216, 168 )
 scale = Vector2( 2, 2 )
 strSignal = "Signal4"
 
+[node name="Button5" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( -297.895, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal5"
+
 [node name="Door" parent="Interactive" instance=ExtResource( 14 )]
 position = Vector2( -120, -40 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
-intMaxActivationCount = 5
+intMaxActivationCount = 6
 
 [node name="Door2" parent="Interactive" instance=ExtResource( 14 )]
-position = Vector2( 518.811, -32 )
+position = Vector2( 520, -32 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "otherScene", "otherScene1" ]
 intMaxActivationCount = 3
 
 [node name="Lever" parent="Interactive" instance=ExtResource( 13 )]
-position = Vector2( -184, -17.1892 )
+position = Vector2( -184, -16 )
 scale = Vector2( 2, 2 )
 strSignal = "Signal5"
 
@@ -139,46 +142,46 @@ scale = Vector2( 2, 2 )
 strSignal = "Signal5"
 
 [node name="Spikes" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -264, 0 )
+position = Vector2( -264, -1.26202 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes2" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -305, 0 )
+position = Vector2( -304, -0.594604 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes3" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -345, 0 )
+position = Vector2( -344, -0.594604 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
 [node name="Spikes4" parent="Interactive" instance=ExtResource( 16 )]
-position = Vector2( -385, 0 )
+position = Vector2( -384, -0.594604 )
 scale = Vector2( 2, 2 )
 aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
 intMaxActivationCount = 6
 
-[node name="Node2" type="Node" parent="."]
-script = SubResource( 2 )
+[node name="SaveStar" parent="Interactive" instance=ExtResource( 18 )]
+position = Vector2( 344, 0 )
+scale = Vector2( 2, 2 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="Transition" parent="." instance=ExtResource( 12 )]
+[node name="Transition" parent="Interactive" instance=ExtResource( 12 )]
 position = Vector2( -120, 0 )
 scale = Vector2( 3.64, 1 )
 new_scene = "res://Maps/Ruins/Ruins_Grave.tscn"
 playerPosition = Vector2( 152, 96 )
 
-[node name="SaveStar" parent="." instance=ExtResource( 18 )]
-position = Vector2( 344, 0 )
-scale = Vector2( 2, 2 )
+[node name="Node2" type="Node" parent="."]
+script = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [editable path="Camera2D"]
 

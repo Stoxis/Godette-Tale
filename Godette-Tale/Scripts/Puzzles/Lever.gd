@@ -5,8 +5,8 @@ var is_pulled := false
 var aryDump : Array
 
 func _ready():
-	if !activationLocation:
-		activationLocation = get_tree().current_scene.filename
+	if !activationLocation: #if there's no alternate location set
+		activationLocation = get_tree().current_scene.filename #set it to the current scene
 	if globalVariables.objectList.has(str(get_tree().current_scene.filename)): #contiune if there are pulled levers found in this scene
 		aryDump = globalVariables.objectList[str(get_tree().current_scene.filename)].split(", ")
 		if aryDump.find(self.name) != -1: #check if self is one of the pulled levers

@@ -6,6 +6,9 @@ extends Node
 signal object_activated(s) #Used by all puzzle objects and the saving system to read and write activations
 signal save_update()  #Used by globalVariables.gd to update the UI in Save.gd when save button is pushed in the UI
 signal buff_signal(s)  #Used by the dialogue system to send any string you want at a specific time while text is being typed, it's currently used to make the save panel appear at the right time in Save.gd
+signal cell(s)  #Used by the menu to start a cellphone conversation, cellphone conversations are stored in the Root_Node of the level you see them in.
+signal battle_started(character_name) #Unused/Placeholder
+signal battle_finished() #Unused/Placeholder
 
 #Save.gd handles the save star UI
 

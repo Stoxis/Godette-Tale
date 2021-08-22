@@ -8,17 +8,18 @@ var facingDir : Vector2 = Vector2()
 
 onready var dialogue = get_node("/root/Root_Node/CanvasLayer/panel")
 onready var save = get_node("/root/Root_Node/CanvasLayer/savePanel")
+onready var menu = get_node("/root/Root_Node/CanvasLayer/infoPanel")
 
 func _ready():
-	self.set_position(SceneChanger._playerPosition) #After transitioning to a new scene go to the preset position for that transition mask
+	self.set_position(SceneChanger._playerPosition) # After transitioning to a new scene go to the preset position for that transition mask
 
 func _physics_process (delta):
 	
 	vel = Vector2()
 	
-	# inputs
+	# Inputs
 	var isMoving : bool = false
-	if !dialogue.is_visible() && !save.is_visible():
+	if !dialogue.is_visible() && !save.is_visible() && !menu.is_visible():
 		var isDiagonal: bool = false
 		if Input.is_action_pressed("move_up"):
 			vel.y -= 1
@@ -53,11 +54,11 @@ func _physics_process (delta):
 
 		if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == 1: #player velocity is down
 			vel.x -= 1
-			facingDir = Vector2(0, 1) #face down
+			facingDir = Vector2(0, 1) #face up
 			isMoving = true
 		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right") && vel.y == -1: #player velocity is up
 			vel.x -= 1
-			facingDir = Vector2(0, -1) #face up
+			facingDir = Vector2(0, -1) #face down
 			isMoving = true
 		elif Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
 			vel.x -= 1

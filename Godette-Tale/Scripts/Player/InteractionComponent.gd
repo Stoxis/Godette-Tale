@@ -9,7 +9,7 @@ var interaction_target : Node
 # Called every frame
 func _process(delta):
 	# Check whether the player is trying to interact
-	if (interaction_target != null and Input.is_action_just_pressed("interact")):
+	if (interaction_target != null and Input.is_action_just_pressed("interact") && globalVariables.menuOpen == false):
 		# If so, we'll call interaction_interact() if our target supports it
 		if (interaction_target.has_method("interaction_interact")):
 			interaction_target.interaction_interact(self)

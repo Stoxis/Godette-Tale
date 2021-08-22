@@ -44,7 +44,7 @@ func _ready():
 	tie.connect("enter_break", self, "_on_enter_break")
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
-	tie.connect("typesound", self, "_on_Typesound")
+	#tie.connect("typesound", self, "_on_Typesound")
 	pass
 
 func _on_input_enter(s):
@@ -74,6 +74,6 @@ func _on_tag_buff(s):
 	print("Tag Buff ",s)
 	pass
 
-func _on_Typesound():
-	print("Typesound")
-	pass
+#func _on_Typesound():
+#	print("Typesound")
+#	pass

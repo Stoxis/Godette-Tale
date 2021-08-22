@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Maps/Ruins/Ruins_Grave.tmx" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Prefabs/Puzzles/Lever.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefabs/SaveStar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Dialogue/SavePoints/SaveGrave.gd" type="Script" id=10]
+[ext_resource path="res://Prefabs/MenuPanel.tscn" type="PackedScene" id=11]
 
 [node name="Root_Node" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
@@ -36,6 +37,8 @@ position = Vector2( 1360, 480 )
 
 [node name="CanvasLayer" parent="." index="4" instance=ExtResource( 4 )]
 
+[node name="infoPanel" parent="CanvasLayer" index="2" instance=ExtResource( 11 )]
+
 [node name="Transition" parent="." index="5" instance=ExtResource( 5 )]
 position = Vector2( 148, 40 )
 scale = Vector2( 11.471, 0.158897 )
@@ -43,7 +46,7 @@ new_scene = "res://Example.tscn"
 playerPosition = Vector2( -121.6, -4.522 )
 
 [node name="Button" parent="." index="6" instance=ExtResource( 7 )]
-position = Vector2( 92, 68 )
+position = Vector2( 92, 67.685 )
 strSignal = "otherScene"
 activationLocation = "res://Example.tscn"
 
