@@ -36,11 +36,9 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Name the fallen human screen
 * Load/Reset screen
 * Fight System
-* ~~Menu~~
 * Shops
 * Inventory
 * Storage Boxes
-* ~~Cellphone conversations (most likely going to be stored in Root_Node)~~
 
 # Notice of Non-Affiliation and Disclaimers
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
