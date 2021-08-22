@@ -17,7 +17,7 @@ var objectList : Dictionary
 
 var cellList : PoolStringArray
 
-var menuOpen : bool = false # It's purpose is to stop menus from opening while if a menu is already open.
+var menuOpen : bool = false # It's purpose is to disable interactions with objects while the player menu is open.
 
 func _ready():
 	time_start = OS.get_unix_time()
