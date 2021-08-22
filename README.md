@@ -27,7 +27,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Save stars save the Player's location, LOVE, NAME, Playtime, the current location's room description, and all puzzle object states  
 * Room descriptions are set in the Root_Node of the current scene the player is in
 ### Music
-* Music does not restart upon entering a different scene and instead contintues playing
+* Music does not restart upon entering a different scene and instead continues playing
 * Music can be stopped, changed, or paused on the fly 
 * Music is generally set in the Root_Node of the scene
 
