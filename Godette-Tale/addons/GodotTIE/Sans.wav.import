@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sans.wav-9b8ff1cf5c16e1f8d5fbe859bb54a58d.sample"
+
+[deps]
+
+source_file="res://addons/GodotTIE/Sans.wav"
+dest_files=[ "res://.import/Sans.wav-9b8ff1cf5c16e1f8d5fbe859bb54a58d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

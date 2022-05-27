@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Art/Sprites/Papyrus_Speaking.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Dialogue/PapyrusDialogue.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 23.7485 )
+
+[node name="Papyrus" type="StaticBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
+scale = Vector2( 0.966089, 0.883584 )
+shape = SubResource( 1 )

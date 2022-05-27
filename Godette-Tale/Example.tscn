@@ -1,0 +1,196 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Prefabs/Player/Camera2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Art/Sprites/Ruins.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/Dialogue/DialogueInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Dialogue/Sign.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Dialogue/Sign2.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Dialogue/Sign3.gd" type="Script" id=7]
+[ext_resource path="res://Prefabs/Dialogue/Papyrus.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Dialogue/Sign4Choices.gd" type="Script" id=10]
+[ext_resource path="res://Prefabs/Transition.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Prefabs/Puzzles/Lever.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Prefabs/Puzzles/Door.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/Puzzles/Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Puzzles/Spikes.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Music/Amalgam.gd" type="Script" id=17]
+[ext_resource path="res://Prefabs/SaveStar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/MenuPanel.tscn" type="PackedScene" id=19]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node
+
+var aryTest : Array = [\"String1\", \"String2\", \"String3\", \"String4\"]
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#print(\"Initiated\")
+	if \"String5\" in aryTest:
+		print(\"Hi\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Root_Node" type="Node2D"]
+script = ExtResource( 17 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+scale = Vector2( 2, 2 )
+
+[node name="TopLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( -400, -304 )
+
+[node name="BottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 1224, 864 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 408, 312 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+
+[node name="TypeSound" parent="CanvasLayer/panel/text_interface_engine" index="0"]
+stream = null
+
+[node name="infoPanel" parent="CanvasLayer" instance=ExtResource( 19 )]
+
+[node name="Interactive" type="Node" parent="."]
+
+[node name="Sign" parent="Interactive" instance=ExtResource( 5 )]
+scale = Vector2( 2, 2 )
+collision_layer = 2147483657
+
+[node name="Sign2" parent="Interactive" instance=ExtResource( 5 )]
+position = Vector2( 80, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 8
+script = ExtResource( 6 )
+
+[node name="Sign3" parent="Interactive" instance=ExtResource( 5 )]
+position = Vector2( 160, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 8
+script = ExtResource( 7 )
+
+[node name="Sign4" parent="Interactive" instance=ExtResource( 5 )]
+position = Vector2( 240, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 8
+script = ExtResource( 10 )
+
+[node name="Papyrus" parent="Interactive" instance=ExtResource( 9 )]
+position = Vector2( 344, 96 )
+collision_layer = 8
+
+[node name="Button" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( 0, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal1"
+
+[node name="Button2" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( -56, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal2"
+
+[node name="Button3" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( -136, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal3"
+
+[node name="Button4" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( -216, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal4"
+
+[node name="Button5" parent="Interactive" instance=ExtResource( 15 )]
+position = Vector2( -297.895, 168 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal5"
+
+[node name="Door" parent="Interactive" instance=ExtResource( 14 )]
+position = Vector2( -120, -40 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
+intMaxActivationCount = 6
+
+[node name="Door2" parent="Interactive" instance=ExtResource( 14 )]
+position = Vector2( 520, -32 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "otherScene", "otherScene1" ]
+intMaxActivationCount = 3
+
+[node name="Lever" parent="Interactive" instance=ExtResource( 13 )]
+position = Vector2( -184, -16 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal5"
+
+[node name="Lever2" parent="Interactive" instance=ExtResource( 13 )]
+position = Vector2( -224, -16 )
+scale = Vector2( 2, 2 )
+strSignal = "Signal5"
+
+[node name="Spikes" parent="Interactive" instance=ExtResource( 16 )]
+position = Vector2( -264, -1.26202 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
+intMaxActivationCount = 6
+
+[node name="Spikes2" parent="Interactive" instance=ExtResource( 16 )]
+position = Vector2( -304, -0.594604 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
+intMaxActivationCount = 6
+
+[node name="Spikes3" parent="Interactive" instance=ExtResource( 16 )]
+position = Vector2( -344, -0.594604 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
+intMaxActivationCount = 6
+
+[node name="Spikes4" parent="Interactive" instance=ExtResource( 16 )]
+position = Vector2( -384, -0.594604 )
+scale = Vector2( 2, 2 )
+aryActivationPhrases = [ "Signal1", "Signal2", "Signal3", "Signal4", "Signal5" ]
+intMaxActivationCount = 6
+
+[node name="Node2" type="Node" parent="."]
+script = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Transition" parent="." instance=ExtResource( 12 )]
+position = Vector2( -120, 0 )
+scale = Vector2( 3.64, 1 )
+new_scene = "res://Maps/Ruins/Ruins_Grave.tscn"
+playerPosition = Vector2( 152, 96 )
+
+[node name="Transition2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -119.947, 91.5558 )
+scale = Vector2( 3.64, 1 )
+new_scene = "res://Prefabs/Shops/ABC_123_A_ShopExample.tscn"
+isShop = true
+
+[node name="SaveStar" parent="." instance=ExtResource( 18 )]
+position = Vector2( 344, 0 )
+scale = Vector2( 2, 2 )
+
+[editable path="Camera2D"]
+[editable path="CanvasLayer"]
+[editable path="CanvasLayer/savePanel"]
+[editable path="Interactive/Papyrus"]
+[editable path="Player"]

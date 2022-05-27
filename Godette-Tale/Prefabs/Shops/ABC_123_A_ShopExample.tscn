@@ -1,0 +1,465 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://addons/GodotTIE/Fonts/DT-Mono.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Art/Sprites/Player/SOUL.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Sprites/Styles/MenuPanel.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Art/Sprites/Shops/shop.png" type="Texture" id=4]
+[ext_resource path="res://addons/GodotTIE/Fonts/DT-Mono-Text.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Sound Effects/BuyItem.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Expressions/Shopkeeper/shopkeeper.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Shops/ShopLogic.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Shops/ABC_123_A_ShopExample.gd" type="Script" id=9]
+[ext_resource path="res://addons/GodotTIE/Sans.wav" type="AudioStream" id=10]
+[ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=11]
+[ext_resource path="res://addons/GodotTIE/GodotTIE_icon.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Shops/InfoTween.gd" type="Script" id=13]
+[ext_resource path="res://addons/GodotTIE/Fonts/DTM-Mono.otf" type="DynamicFontData" id=14]
+
+[sub_resource type="Animation" id=7]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shopkeeper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Speaking"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shopkeeper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Fonts/Cave-Story.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+extra_spacing_top = -6
+extra_spacing_char = -2
+extra_spacing_space = -11
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 27
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 27
+font_data = ExtResource( 14 )
+
+[node name="Root_Node" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="ShopBackground" type="Sprite" parent="."]
+position = Vector2( 319.999, 122.469 )
+scale = Vector2( 1.97522, 1.97522 )
+texture = ExtResource( 4 )
+
+[node name="Shopkeeper" type="Sprite" parent="."]
+position = Vector2( 319.936, 273.164 )
+scale = Vector2( 2.3625, 2.3625 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shopkeeper"]
+root_node = NodePath("../..")
+anims/Idle = SubResource( 7 )
+anims/Speaking = SubResource( 8 )
+
+[node name="InterPanel" type="Panel" parent="."]
+margin_top = 240.0
+margin_right = 640.0
+margin_bottom = 480.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="InterPanelText" type="ReferenceRect" parent="InterPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 39.0
+margin_top = 17.0
+margin_right = 43.0
+margin_bottom = 10.0
+rect_scale = Vector2( 0.92, 0.92 )
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_icon": ExtResource( 12 )
+}
+BREAK_ON_MAX_LINES = false
+FONT = SubResource( 3 )
+
+[node name="TypeSound" type="AudioStreamPlayer" parent="InterPanel/InterPanelText"]
+stream = ExtResource( 10 )
+
+[node name="FacialTexture" type="TextureRect" parent="InterPanel/InterPanelText"]
+margin_left = 229.199
+margin_top = -113.089
+margin_right = 325.199
+margin_bottom = -33.0891
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="TextureRect" parent="InterPanel"]
+visible = false
+margin_left = 57.4069
+margin_top = 59.9391
+margin_right = 147.407
+margin_bottom = 149.939
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InterPanel"]
+visible = false
+margin_left = 82.4069
+margin_top = 53.9391
+margin_right = 138.407
+margin_bottom = 82.9391
+custom_fonts/font = ExtResource( 1 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="talkOptions" type="VBoxContainer" parent="InterPanel"]
+visible = false
+margin_left = 49.0
+margin_top = 24.0
+margin_right = 402.0
+margin_bottom = 227.0
+
+[node name="buyOptions" type="VBoxContainer" parent="InterPanel"]
+visible = false
+margin_left = 49.0
+margin_top = 24.0
+margin_right = 402.0
+margin_bottom = 227.0
+custom_constants/separation = 6
+
+[node name="sellGrid" type="GridContainer" parent="InterPanel"]
+visible = false
+margin_left = 49.0
+margin_top = 24.0
+margin_right = 402.0
+margin_bottom = 227.0
+custom_constants/hseparation = 103
+
+[node name="SellLabelHBox" type="HBoxContainer" parent="InterPanel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -83.0
+margin_right = 1.0
+alignment = 1
+
+[node name="SellConfirmLabel" type="Label" parent="InterPanel/SellLabelHBox"]
+margin_left = 192.0
+margin_top = 146.0
+margin_right = 449.0
+margin_bottom = 177.0
+custom_fonts/font = SubResource( 4 )
+text = "Sell item for 50G?"
+align = 1
+
+[node name="SellOptionHBox" type="HBoxContainer" parent="InterPanel"]
+visible = false
+margin_left = 1.0
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 240.0
+custom_constants/separation = 160
+alignment = 1
+
+[node name="Option 1" type="Label" parent="InterPanel/SellOptionHBox"]
+margin_left = 199.0
+margin_top = 86.0
+margin_right = 247.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 5 )
+text = "Yes"
+
+[node name="Cursor" type="TextureRect" parent="InterPanel/SellOptionHBox/Option 1"]
+margin_left = -25.0
+margin_top = 10.0
+margin_right = 72.0
+margin_bottom = 107.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Option 2" type="Label" parent="InterPanel/SellOptionHBox"]
+margin_left = 407.0
+margin_top = 86.0
+margin_right = 439.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 6 )
+text = "No"
+
+[node name="Cursor" type="TextureRect" parent="InterPanel/SellOptionHBox/Option 2"]
+visible = false
+margin_left = -25.0
+margin_top = 10.0
+margin_right = 73.0
+margin_bottom = 108.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyPanel" type="Panel" parent="."]
+margin_left = 417.0
+margin_top = 240.0
+margin_right = 640.0
+margin_bottom = 480.0
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="BuySound" type="AudioStreamPlayer" parent="BuyPanel"]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="InfoPanel" type="Panel" parent="BuyPanel"]
+show_behind_parent = true
+margin_right = 223.0
+margin_bottom = 169.0
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 13 )
+
+[node name="InfoPanelText" type="ReferenceRect" parent="BuyPanel/InfoPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = 23.0
+margin_right = 9.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.92, 0.92 )
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_icon": ExtResource( 12 )
+}
+
+[node name="TypeSound" type="AudioStreamPlayer" parent="BuyPanel/InfoPanel/InfoPanelText"]
+stream = ExtResource( 10 )
+
+[node name="FacialTexture" type="TextureRect" parent="BuyPanel/InfoPanel/InfoPanelText"]
+margin_left = -157.613
+margin_top = -107.203
+margin_right = -61.6129
+margin_bottom = -27.2028
+expand = true
+stretch_mode = 5
+
+[node name="Tween" type="Tween" parent="BuyPanel/InfoPanel"]
+
+[node name="BuyPanelText" type="ReferenceRect" parent="BuyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = 23.0
+margin_right = -19.0
+margin_bottom = -40.0
+rect_scale = Vector2( 0.92, 0.92 )
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_icon": ExtResource( 12 )
+}
+BREAK_ON_MAX_LINES = false
+FONT = SubResource( 3 )
+
+[node name="TypeSound" type="AudioStreamPlayer" parent="BuyPanel/BuyPanelText"]
+stream = ExtResource( 10 )
+
+[node name="FacialTexture" type="TextureRect" parent="BuyPanel/BuyPanelText"]
+margin_left = -157.613
+margin_top = -107.203
+margin_right = -61.6129
+margin_bottom = -27.2028
+expand = true
+stretch_mode = 5
+
+[node name="Option 1" type="Label" parent="BuyPanel"]
+margin_left = 57.4069
+margin_top = 19.9391
+margin_right = 113.407
+margin_bottom = 55.9391
+custom_fonts/font = ExtResource( 5 )
+text = "Buy"
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/Option 1"]
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option 2" type="Label" parent="BuyPanel"]
+margin_left = 57.4069
+margin_top = 60.9391
+margin_right = 125.407
+margin_bottom = 96.9391
+custom_fonts/font = ExtResource( 5 )
+text = "Sell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/Option 2"]
+visible = false
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option 3" type="Label" parent="BuyPanel"]
+margin_left = 57.4069
+margin_top = 100.939
+margin_right = 125.407
+margin_bottom = 136.939
+custom_fonts/font = ExtResource( 5 )
+text = "Talk"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/Option 3"]
+visible = false
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option 4" type="Label" parent="BuyPanel"]
+margin_left = 57.4069
+margin_top = 140.939
+margin_right = 125.407
+margin_bottom = 176.939
+custom_fonts/font = ExtResource( 5 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/Option 4"]
+visible = false
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" type="Label" parent="BuyPanel"]
+margin_left = 27.0
+margin_top = 184.0
+margin_right = 95.0
+margin_bottom = 259.0
+custom_fonts/font = ExtResource( 5 )
+text = "100G
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space" type="Label" parent="BuyPanel"]
+margin_left = 144.0
+margin_top = 184.0
+margin_right = 212.0
+margin_bottom = 259.0
+custom_fonts/font = ExtResource( 5 )
+text = "1/8"
+
+[node name="ConfirmPrompt" type="Label" parent="BuyPanel"]
+visible = false
+margin_left = 40.4069
+margin_top = 26.9391
+margin_right = 210.407
+margin_bottom = 101.939
+custom_fonts/font = SubResource( 4 )
+text = "Buy it for
+50G?"
+
+[node name="Option 1" type="Label" parent="BuyPanel/ConfirmPrompt"]
+margin_left = 14.0
+margin_top = 83.0
+margin_right = 70.0001
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 5 )
+text = "Yes"
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/ConfirmPrompt/Option 1"]
+margin_left = -25.0
+margin_top = 10.0
+margin_right = 72.0
+margin_bottom = 107.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Option 2" type="Label" parent="BuyPanel/ConfirmPrompt"]
+margin_left = 14.0
+margin_top = 114.0
+margin_right = 82.0001
+margin_bottom = 150.0
+custom_fonts/font = SubResource( 6 )
+text = "No"
+
+[node name="Cursor" type="TextureRect" parent="BuyPanel/ConfirmPrompt/Option 2"]
+visible = false
+margin_left = -25.0
+margin_top = 10.0
+margin_right = 73.0
+margin_bottom = 108.0
+rect_scale = Vector2( 0.18868, 0.18868 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

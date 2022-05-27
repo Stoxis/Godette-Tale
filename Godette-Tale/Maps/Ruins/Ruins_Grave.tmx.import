@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/Ruins_Grave.tmx-8e69d2053bbf0b5b89713b4df331434c.scn"
+
+[deps]
+
+source_file="res://Maps/Ruins/Ruins_Grave.tmx"
+dest_files=[ "res://.import/Ruins_Grave.tmx-8e69d2053bbf0b5b89713b4df331434c.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=0
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

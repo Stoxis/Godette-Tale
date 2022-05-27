@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="sellOptions 1" type="VBoxContainer"]
+margin_right = 176.0
+margin_bottom = 203.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 7
