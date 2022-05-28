@@ -56,6 +56,7 @@ Any other help, bug fixes, etc, would also be much appreciated.
 
 # License
 **MIT**
+
 If you use this project please credit this repo in whatever you're making and include the license.
 
 # Notice of Non-Affiliation and Disclaimers
