@@ -55,7 +55,8 @@ Any other help, bug fixes, etc, would also be much appreciated.
 * Stats menu
 
 # License
-If you use this project please credit this repo in whatever you're making.
+**MIT**
+If you use this project please credit this repo in whatever you're making and include the license.
 
 # Notice of Non-Affiliation and Disclaimers
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Toby Fox, or any of his subsidiaries or his affiliates. The official Undertale website can be found at https://undertale.com/.
